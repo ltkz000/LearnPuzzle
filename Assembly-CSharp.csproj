@@ -42,11 +42,12 @@
      <Compile Include="Assets\Scripts\Grid\Grid.cs" />
      <Compile Include="Assets\Scripts\Shape\Shape.cs" />
      <Compile Include="Assets\Scripts\Scores.cs" />
+     <Compile Include="Assets\Scripts\UI\GameOverPopup.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\Grid\GridSquare.cs" />
      <Compile Include="Assets\Scripts\Grid\LineIndicator.cs" />
      <Compile Include="Assets\Scripts\Shape\ShapeSquare.cs" />
-     <Compile Include="Assets\Scripts\UI\GameOverPopup.cs" />
+     <Compile Include="Assets\Scripts\Animation\EatAnim.cs" />
      <None Include="Assets\Graphics\License.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.36f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -260,6 +261,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.36f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>D:\LearnUnity\Puzzle\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.36f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -704,6 +708,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{4798dbad-c943-c760-d42a-1379f0ab69db}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

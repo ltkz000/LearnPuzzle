@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GridSquare : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GridSquare : MonoBehaviour
     public Image activeImage;
     public Image normalImage;
     public List<Sprite> normalImages;
+
+    private Vector3 defaultScale;
 
     public bool Selected { get; set; }
     public int SquareIndex { get; set; }
@@ -25,6 +28,8 @@ public class GridSquare : MonoBehaviour
     {
         Selected = false;
         SquareOccupied = false;
+
+        defaultScale = activeImage.rectTransform.localScale;
     }
 
     public bool CanWeUseThisSquare()
@@ -47,7 +52,12 @@ public class GridSquare : MonoBehaviour
 
     public void DeactivateSquare()
     {
-        activeImage.gameObject.SetActive(false);
+        activeImage.rectTransform.DOScale(0.0f, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
+        {
+            activeImage.gameObject.SetActive(false);
+            activeImage.rectTransform.localScale = defaultScale;
+        });
+
     }
 
     public void ClearOccupied()
